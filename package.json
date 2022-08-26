@@ -1,14 +1,24 @@
 {
   "name": "oneconf",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Easily define and load environment variables via a simple type declaration.",
-  "main": "src/index.js",
+  "main": "dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "prepublish": "npx tsc"
+    "prepublish": "npm run compile",
+    "compile": "npm run clean && tsc -p ./src",
+    "watch": "tsc -w -p ./src",
+    "clean": "rm -rf dist"
   },
   "author": "Jett Crowson",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jettdc/oneconf/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jettdc/oneconf.git"
+  },
   "devDependencies": {
     "nodemon": "^2.0.19",
     "ts-node": "^10.9.1",
@@ -17,5 +27,5 @@
   "dependencies": {
     "dotenv": "^16.0.1"
   },
-  "types": "index.d.ts"
+  "types": "dist/index.d.ts"
 }

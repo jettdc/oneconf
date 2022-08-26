@@ -1,6 +1,5 @@
 import * as ts from "typescript";
 import * as dotenv from "dotenv";
-import {Config} from "../test/config";
 
 function recurseType(type: ts.Type, typeChecker: ts.TypeChecker, statement: ts.Statement, currentPath: string, completed: {[key: string]: string}): any {
         for (const prop of type.getProperties()) {
@@ -68,7 +67,7 @@ function attemptTypeConvert(key: string, propType: string): number | boolean {
     }
 }
 export function loadConfig<T>(path: string): T {
-    const typeBSignature = extractTypeSignature("./config.ts", "Config");
+    const typeBSignature = extractTypeSignature(path, "Config");
     dotenv.config()
     const config: any = {};
     Object.keys(typeBSignature).forEach((key) => {
