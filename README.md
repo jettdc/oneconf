@@ -3,7 +3,9 @@ Easily define and load environment variables via a simple type declaration.
 
 The package uses `dotenv` to load environment variables from the `.env` file as well.
 
-## Usage
+### Installation
+`npm i --save oneconf`
+### Usage
 The package provides a single function which loads in environment variables based on the `Config` type declared in the file located at `path`.
 
 `function loadConfig<T>(path: string): T;`
