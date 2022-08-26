@@ -50,3 +50,8 @@ const config: Config = {
 ```
 
 Available types for config keys are `string`, `boolean`, and `number` currently.
+
+### CLI
+There is also a simple tool provided which will spit out a `.env` file containing the necessary keys:
+
+`npx oneconf-init ./path/to/config.ts`
